@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Write a description of class Spaceship here.
  * 
  * @author Kavin
- * @version January 202
+ * @version January 2023
  */
 public class Spaceship extends Actor
 {
@@ -34,6 +34,9 @@ public class Spaceship extends Actor
         {
             y += 4;
         }
+        
+        //Remove enemy if defeated by spaceship
+        removeTouching(Enemy.class);
         
         setLocation(x, y);
     }

@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Write a description of class MyWorld here.
  * 
  * @author Kavin
- * @version December 2022
+ * @version January 2023
  */
 public class MyWorld extends World
 {
@@ -17,8 +17,11 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1, false);
         
-        // Create the elephant object
+        // Create the spaceship object
         Spaceship spaceship = new Spaceship();
         addObject(spaceship, 300, 300);
+        
+        Enemy enemy = new Enemy();
+        addObject(enemy, 300, 0);
     }
 }
