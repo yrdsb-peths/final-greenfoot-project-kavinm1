@@ -19,22 +19,30 @@ public class Spaceship extends Actor
         
         if(Greenfoot.isKeyDown("left"))
         {
-            x -= 2;
+            x -= 4;
         }
         if(Greenfoot.isKeyDown("right"))
         {
-            x +=2;
+            x +=4;
         }
         
         if(Greenfoot.isKeyDown("up"))
         {
-            y -= 2;
+            y -= 4;
         }
         if(Greenfoot.isKeyDown("down"))
         {
-            y += 2;
+            y += 4;
         }
         
         setLocation(x, y);
+    }
+    
+    //This method resizes the spaceship
+    public Spaceship()
+    {
+        GreenfootImage Spaceship = getImage();
+        Spaceship.scale(100,100);
+        setImage(Spaceship);
     }
 }
