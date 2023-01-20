@@ -9,8 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Spaceship extends Actor
 {
     /**
-     * Act - do whatever the Spaceship wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Constructor- The code that gets run one time when object is created
      */
     public void act()
     {
@@ -32,17 +31,30 @@ public class Spaceship extends Actor
         }
         if(Greenfoot.isKeyDown("down"))
         {
-            y += 4;
+            y +=4;
         }
         
-        //Remove enemy if defeated by spaceship
-        removeTouching(Enemy.class);
-        
         setLocation(x, y);
+        
+        // Remove alien if defeated by spaceship
+        defeat();
     }
     
-    //This method resizes the spaceship
-    public Spaceship()
+    /*
+     * Defeat enemy and spawn new one if defeated
+     */
+    
+    public void defeat()
+    {
+        if(isTouching(Enemy.class))
+        {
+            removeTouching(Enemy.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createEnemy();
+            world.increaseScore();
+        }
+    }
+        public Spaceship()
     {
         GreenfootImage Spaceship = getImage();
         Spaceship.scale(100,100);
