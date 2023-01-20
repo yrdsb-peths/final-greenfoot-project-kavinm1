@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Spaceship extends Actor
 {
     GreenfootSound alienSound = new GreenfootSound("aliensound.wav");
-    
+    GreenfootSound backgroundSound = new GreenfootSound("backgroundsound.mp3");
     /**
      * Constructor- The code that gets run one time when object is created
      */
@@ -17,7 +17,7 @@ public class Spaceship extends Actor
     {
         int x = getX();
         int y = getY();
-        
+        backgroundSound.play();
         if(Greenfoot.isKeyDown("left"))
         {
             x -= 4;
