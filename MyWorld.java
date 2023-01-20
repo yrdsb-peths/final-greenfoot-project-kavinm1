@@ -26,7 +26,6 @@ public class MyWorld extends World
         // Create a label
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 50, 50);
-        
         createEnemy();
     }
     
