@@ -11,6 +11,7 @@ public class Enemy extends Actor
     private int height;
     private int width;
     GreenfootSound gameOverSound = new GreenfootSound("gameover.wav"); 
+    GreenfootSound backgroundSound = new GreenfootSound("backgroundsound.mp3");
     public Enemy (int height, int width)
     {
         this.height = height;
@@ -33,13 +34,15 @@ public class Enemy extends Actor
         int x = getX();
         int y = getY() + speed;
         setLocation(x, y);
-        
+        backgroundSound.play();
         //Remove enemy and draw game over when enemy gets to the bottom
         MyWorld world = (MyWorld) getWorld();
         if(getY() >= world.getHeight())
         {
             world.gameOver();
             world.removeObject(this);
+            //Stop background sound
+            backgroundSound.stop();
             //Play game over sound
             gameOverSound.play();
         }
