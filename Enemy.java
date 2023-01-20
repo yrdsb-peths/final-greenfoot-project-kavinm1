@@ -40,6 +40,7 @@ public class Enemy extends Actor
         {
             world.gameOver();
             world.removeObject(this);
+            //Play game over sound
             gameOverSound.play();
         }
         

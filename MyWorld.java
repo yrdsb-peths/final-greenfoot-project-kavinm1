@@ -13,7 +13,6 @@ public class MyWorld extends World
     int level = 1;
     /**
      * Constructor for objects of class MyWorld.
-     * 
      */
     public MyWorld()
     {    

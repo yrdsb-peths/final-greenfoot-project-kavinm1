@@ -45,7 +45,6 @@ public class Spaceship extends Actor
     /*
      * Defeat enemy and spawn new one if defeated
      */
-    
     public void defeat()
     {
         if(isTouching(Enemy.class))
@@ -54,10 +53,12 @@ public class Spaceship extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.createEnemy();
             world.increaseScore();
+            //Play sound effects when crashing
             alienSound.play();
         }
     }
-        public Spaceship()
+    //Resize spaceship
+    public Spaceship()
     {
         GreenfootImage Spaceship = getImage();
         Spaceship.scale(50,50);

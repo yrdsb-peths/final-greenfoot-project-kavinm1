@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TitleScreen extends World
 {
+    //Create title label
     Label titleLabel = new Label("Space Guardian", 60);
     /**
      * Constructor for objects of class TitleScreen.
@@ -27,7 +28,7 @@ public class TitleScreen extends World
      */
     public void act()
     {
-        //start the game if user presses the space bar
+        //Start the game if user presses the space bar
         if(Greenfoot.isKeyDown("space"));
         {
             MyWorld gameWorld = new MyWorld();
@@ -36,8 +37,7 @@ public class TitleScreen extends World
     }
     
     /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
+     * Add in intro labels
      */
     private void prepare()
     {
