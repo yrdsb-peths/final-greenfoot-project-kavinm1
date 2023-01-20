@@ -10,7 +10,7 @@ public class Enemy extends Actor
 {
     private int height;
     private int width;
-     
+    GreenfootSound gameOverSound = new GreenfootSound("gameover.wav"); 
     public Enemy (int height, int width)
     {
         this.height = height;
@@ -40,6 +40,7 @@ public class Enemy extends Actor
         {
             world.gameOver();
             world.removeObject(this);
+            gameOverSound.play();
         }
         
     }
@@ -55,12 +56,5 @@ public class Enemy extends Actor
         GreenfootImage Enemy = getImage();
         Enemy.scale(100,100);
         setImage(Enemy);
-    }
-    public void shrink()
-    {
-        if(isTouching(Spaceship.class))
-        {
-            resizeImage();
-        }
     }
 }
