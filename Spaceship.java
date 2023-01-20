@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Spaceship extends Actor
 {
+    GreenfootSound alienSound = new GreenfootSound("aliensound.wav");
+    
     /**
      * Constructor- The code that gets run one time when object is created
      */
@@ -52,12 +54,13 @@ public class Spaceship extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.createEnemy();
             world.increaseScore();
+            alienSound.play();
         }
     }
         public Spaceship()
     {
         GreenfootImage Spaceship = getImage();
-        Spaceship.scale(100,100);
+        Spaceship.scale(50,50);
         setImage(Spaceship);
     }
 }

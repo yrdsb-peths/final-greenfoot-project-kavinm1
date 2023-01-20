@@ -8,6 +8,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Enemy extends Actor
 {
+    private int height;
+    private int width;
+     
+    public Enemy (int height, int width)
+    {
+        this.height = height;
+        this.width = width;
+    }
+    public void resizeImage()
+    {
+        GreenfootImage Enemy = getImage();
+        Enemy.scale(height - 50, width - 50);
+    }
     /**
      * Act - do whatever the Apple wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -28,15 +41,26 @@ public class Enemy extends Actor
             world.gameOver();
             world.removeObject(this);
         }
+        
     }
     
     public void setSpeed(int spd)
     {
         speed = spd;
     }
+    
+    //Resize enemy size
     public Enemy()
     {
         GreenfootImage Enemy = getImage();
         Enemy.scale(100,100);
         setImage(Enemy);
-    }}
+    }
+    public void shrink()
+    {
+        if(isTouching(Spaceship.class))
+        {
+            resizeImage();
+        }
+    }
+}

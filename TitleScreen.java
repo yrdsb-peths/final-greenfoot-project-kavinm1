@@ -52,5 +52,7 @@ public class TitleScreen extends World
         label.setLocation(300,320);
         label2.setLocation(305,297);
         label.setLocation(299,334);
+        Label label3 = new Label("Touch the aliens to defeat them, they will speed up as you progress!", 20);
+        addObject(label3,301,252);
     }
 }
