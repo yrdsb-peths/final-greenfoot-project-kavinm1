@@ -11,6 +11,9 @@ public class MyWorld extends World
     public int score = 0;
     Label scoreLabel;
     int level = 1;
+    GreenfootSound backgroundSound = new GreenfootSound("backgroundsound.mp3");
+    GreenfootSound gameOverSound = new GreenfootSound("gameover.wav");
+    boolean gameOverTrue = false;    
     /**
      * Constructor for objects of class MyWorld.
      */
@@ -34,8 +37,13 @@ public class MyWorld extends World
      */
     public void gameOver()
     {
-        Label gameOverLabel = new Label("Game Over", 100);
-        addObject(gameOverLabel, 300, 200);
+        if(gameOverTrue = true)
+        {
+            GameOver gameOver = new GameOver();
+            Greenfoot.setWorld(gameOver);
+            backgroundSound.stop();
+            gameOverSound.play();
+        }
     }
     
     /*
@@ -63,4 +71,15 @@ public class MyWorld extends World
         int y = 0;
         addObject(enemy, x, y);
     }
+    
+    public void act()
+    {
+        backgroundSound.play();
+    }
+    
+    public void checkGameOver()
+    {
+        gameOverTrue = true;
+    }
+   
 }
